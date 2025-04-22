@@ -126,3 +126,46 @@ $(document).ready(function () {
     icon.attr("class", filledIcon);
   });
 });
+
+$(document).ready(function () {
+  // Simulate location fetching
+  if (navigator.geolocation) {
+    console.log("Geolocation is supported");
+
+    navigator.geolocation.getCurrentPosition(
+      function (position) {
+        console.log("Location fetched successfully", position);
+
+        const { latitude, longitude } = position.coords;
+        $("#location-display").text(
+          ` ${latitude.toFixed(2)}, ${longitude.toFixed(2)}`
+        );
+        console.log(latitude, longitude);
+      },
+      function (error) {
+        // Handle errors
+        console.log(error);
+
+        switch (error.code) {
+          case error.PERMISSION_DENIED:
+            $("#location-display").text("Permission denied for location.");
+            break;
+          case error.POSITION_UNAVAILABLE:
+            $("#location-display").text("Location information is unavailable.");
+            break;
+          case error.TIMEOUT:
+            $("#location-display").text(
+              "The request to get location timed out."
+            );
+            break;
+          default:
+            $("#location-display").text("An unknown error occurred.");
+        }
+      }
+    );
+  } else {
+    $("#location-display").text(
+      "Geolocation is not supported by this browser."
+    );
+  }
+});

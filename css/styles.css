@@ -9,38 +9,54 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
+  background: linear-gradient(
+    45deg,
+    #403f67,
+    #007f92
+  ); /* Linear gradient background */
+  border-radius: 0px 0px 10px 10px; /* Rounded corners */
+  margin-bottom: 2rem;
+  padding: 10px; /* Adjust padding for better spacing */
+  color: white; /* Ensure text is readable */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional shadow for better visuals */
+  height: 124px;
 }
 
 .notification-icon img {
   width: 24px;
   height: 24px;
 }
-
 .location {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  color: white;
-  font-size: 14px;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
 }
-
-.categories {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+.location #location-display {
+  font-size: 10px;
+}
+.card {
+  height: 143px; /* Set a fixed height for all cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure content is spaced evenly */
+  overflow: hidden; /* Prevent content overflow */
   padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.06); /* Optional shadow */
+  border-radius: 12px; /* Rounded corners */
+  border: none !important;
 }
-
-.category {
-  background-color: #007bff;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  border-radius: 5px;
-  cursor: pointer;
+.card-body {
+  padding: 0px !important;
+}
+.card img {
+  border-radius: 12px;
+  height: 100px;
+}
+.card-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  margin-top: 10px;
 }
 
 @media (max-width: 768px) {
@@ -50,6 +66,9 @@ header {
 }
 
 @media (max-width: 480px) {
+  header {
+    height: 80px;
+  }
   .category {
     width: 100%;
   }
@@ -174,18 +193,75 @@ header {
   left: 10px;
   /* background-color: rgba(0, 0, 0, 0.6);  */
   color: white;
-  font-size: 14px;
+  font-size: 12px;
   padding: 10px;
   border-radius: 5px;
   z-index: 2;
   max-width: 80%; /* Prevent text from overflowing */
 }
 
-.swiper-button-next,
-.swiper-button-prev {
-  color: #007bff; /* Customize navigation button color */
-}
-
 .swiper-pagination-bullet {
   background: #007bff; /* Customize pagination bullet color */
+}
+
+/* Responsive Navbar for Small Screens */
+@media (max-width: 768px) {
+  .navbar {
+    height: auto; /* Allow the navbar to adjust its height */
+    padding-bottom: 2rem; /* Adjust padding for smaller screens */
+  }
+
+  .nav-btn {
+    font-size: 10px; /* Reduce font size for smaller screens */
+  }
+
+  .nav-btn i {
+    font-size: 18px; /* Reduce icon size */
+  }
+
+  .heart-btn-wrapper {
+    width: 60px; /* Adjust size of the heart button wrapper */
+    height: 60px;
+  }
+
+  .heart-btn {
+    width: 50px; /* Adjust size of the heart button */
+    height: 50px;
+  }
+
+  .heart-btn i {
+    font-size: 20px; /* Adjust icon size inside the heart button */
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    margin-bottom: 6rem;
+  }
+  .navbar {
+    height: auto;
+    padding-bottom: 0.5rem;
+  }
+
+  .nav-btn {
+    font-size: 9px; /* Further reduce font size for very small screens */
+  }
+
+  .nav-btn i {
+    font-size: 16px; /* Further reduce icon size */
+  }
+
+  .heart-btn-wrapper {
+    width: 48px; /* Further adjust size of the heart button wrapper */
+    height: 48px;
+  }
+
+  .heart-btn {
+    width: 40px; /* Further adjust size of the heart button */
+    height: 40px;
+  }
+
+  .heart-btn i {
+    font-size: 18px; /* Further adjust icon size inside the heart button */
+  }
 }
