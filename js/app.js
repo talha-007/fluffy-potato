@@ -1,13 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
   const swiper = new Swiper(".mySwiper", {
     loop: true, // Enables wraparound behavior
-    slidesPerView: 1.2, // Show part of the next and previous slides
+
     spaceBetween: 20, // Space between slides
     centeredSlides: true, // Center the active slide
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 50,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
     },
+
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
