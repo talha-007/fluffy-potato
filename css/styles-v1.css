@@ -22,8 +22,9 @@ header {
   height: 124px;
 }
 .notification-icon {
-  background-color: #fff;
-  border-radius: 12px;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 50%;
   padding: 5px;
   width: 38px;
   height: 38px;
@@ -94,24 +95,20 @@ header {
   bottom: 0;
   background: rgb(255, 255, 255);
 }
+/* Navbar Styles */
 .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 70px;
-  /* box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); */
-  padding-bottom: 5rem;
-  background: #fff;
-}
-.union-bg {
-  position: absolute;
-  top: -10px; /* Position the union image above the navbar */
-  left: 0;
-  width: 100%;
-  height: 90px; /* Adjust height to match the union image */
-  background: url("../images/Union.png") no-repeat center top;
-  background-size: contain; /* Ensure the image scales properly */
-  z-index: 9; /* Ensure it is below the navbar content */
-  clip-path: path(
-    "M0,0 H100% Q50%,80% 100%,0 H0 Z"
-  ); /* Clip the background to match the curve */
+  background: linear-gradient(
+    45deg,
+    #403f67,
+    #007f92
+  ); /* Linear gradient background */
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+  padding: 0px;
+  flex-wrap: nowrap;
 }
 
 .nav-btn {
@@ -119,71 +116,57 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
-  color: #6c757d; /* Default color */
-  border: none;
-  background: none !important;
-  flex: 1;
-  transition: color 0.3s ease, background 0.3s ease;
-}
-
-/* .nav-btn i,
-.nav-btn span {
-  transition: background 0.3s ease, -webkit-text-fill-color 0.3s ease;
-} */
-
-.nav-btn.active i,
-.nav-btn.active span {
-  background: linear-gradient(
-    45deg,
-    #403f67,
-    #007f92
-  ); /* Gradient for active state */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; /* Makes the gradient visible */
-}
-
-.heart-btn-wrapper {
   position: relative;
-  /* top: -20px; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 70px;
-  height: 70px;
-  background-color: #d6dcf3; /* Outer circle color */
-  border-radius: 50%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border: none;
+  background: transparent;
+  position: relative;
+  transition: all 0.3s ease;
+  padding: 0px;
 }
 
-.heart-btn-wrapper .heart-btn {
+.nav-btn div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px; /* Equal width */
+  height: 40px; /* Equal height */
+  background: transparent; /* Default background */
+  border-radius: 50%; /* Ensure the background is circular */
+  transition: all 0.3s ease;
+  box-sizing: border-box; /* Include padding and border in dimensions */
+}
+
+.nav-btn.active div {
   background: linear-gradient(
     45deg,
     #403f67,
     #007f92
-  ); /* Heart button stays the same */
-  color: white;
-  border-radius: 50%;
-}
-
-.heart-btn {
+  ); /* Gradient background */
+  border: 2px solid #fff; /* Optional border */
+  width: 40px; /* Ensure width remains consistent */
+  height: 40px; /* Ensure height remains consistent */
   display: flex;
-  align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(
-    45deg,
-    #403f67,
-    #007f92
-  ); /* Inner circle gradient */
-  color: white;
-  border-radius: 50%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  align-items: center;
+  transform: translateY(-25px); /* Move the button up */
 }
 
-.heart-btn i {
-  font-size: 24px;
+.nav-btn i {
+  font-size: 1.5rem;
+  color: #6c757d;
+}
+
+.nav-btn.active i {
+  color: white; /* Change icon color to white */
+}
+
+.nav-btn span {
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+.nav-btn.active span {
+  color: #fff; /* Highlight the text when active */
 }
 
 .swiper {
@@ -215,36 +198,14 @@ header {
   position: absolute;
   top: 16px;
   left: 16px;
-  background: #ffffff;
-  color: #344d8d;
+  background: #ffffff3f;
+  color: #fff;
   padding: 5px 10px;
   border-radius: 12px;
   font-size: 0.9rem;
   font-weight: 400;
   backdrop-filter: blur(8px); /* Add background blur effect */
   -webkit-backdrop-filter: blur(8px);
-}
-
-.slide-text {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  /* background-color: rgba(0, 0, 0, 0.6);  */
-  color: white;
-  font-size: 10px;
-  padding: 10px;
-  border-radius: 5px;
-  font-weight: 400;
-  z-index: 2;
-  max-width: 80%; /* Prevent text from overflowing */
-}
-.swiper-pagination {
-  bottom: -25px !important;
-  position: absolute;
-  z-index: 999;
-}
-.swiper-pagination-bullet {
-  background: #007f92; /* Customize pagination bullet color */
 }
 
 .categories-header {
@@ -354,25 +315,26 @@ header {
 
 .banner {
   position: relative;
-  width: 100%;
-  height: 300px; /* Adjust height to match the Swiper slides */
-  background-color: #f8f9fa; /* Fallback background color */
+  width: 90%;
+  height: 192px; /* Adjust height to match the Swiper slides */
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      /* Transparent at the top */ rgba(0, 0, 0, 0.3) /* Black at the bottom */
+    ),
+    url(../images/banner\ img.png); /* Fallback background color */
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-}
-
-.banner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensure the image covers the entire banner area */
+  margin: auto;
+  border-radius: 12px;
 }
 
 .banner-text {
   position: absolute;
   bottom: 20px;
-
+  /* left: 12px; */
   color: white;
   padding: 10px 15px;
   border-radius: 5px;

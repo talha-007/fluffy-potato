@@ -27,7 +27,7 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="js/app.js" defer></script>
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/stylesv2.css" />
   </head>
 
   <body>
@@ -77,7 +77,7 @@
       </div>
       <div id="notification-icon" class="notification-icon">
         <!-- <i style="color: black" class="bi bi-bell"></i> -->
-        <img src="./icons/Notification.svg" alt="" />
+        <img src="./icons/Notificationv1.svg" alt="" />
         <!-- <span
           style="color: black"
           id="notification-count"
@@ -122,72 +122,63 @@
     <main class="container mt-4">
       <h1 class="mb-2 categories-header">Categories</h1>
       <div class="row g-3">
-        <div class="col-6">
+        <div class="col-4">
           <div class="card text-center">
             <img
-              src="images/marketplace.png"
+              src="/icons/marketplace.svg"
               class="card-img-top"
               alt="Category 1"
             />
-            <div class="card-body">
-              <h5 class="card-title">Marketplace</h5>
-            </div>
+
+            <h5 class="card-title">Marketplace</h5>
           </div>
         </div>
-        <div class="col-6">
+        <div class="col-4">
           <div class="card text-center">
-            <img
-              src="images/housing.png"
-              class="card-img-top"
-              alt="Category 2"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Housing</h5>
-            </div>
+            <img src="icons/free.svg" class="card-img-top" alt="Category 5" />
+
+            <h5 class="card-title">Free Giveaway</h5>
           </div>
         </div>
-        <div class="col-6">
+        <div class="col-4">
           <div class="card text-center">
-            <img
-              src="images/events.png"
-              class="card-img-top"
-              alt="Category 3"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Events</h5>
-            </div>
+            <img src="icons/events.svg" class="card-img-top" alt="Category 3" />
+
+            <h5 class="card-title">Events</h5>
           </div>
         </div>
-        <div class="col-6">
+        <div class="col-4">
           <div class="card text-center">
             <img
-              src="images/community.png"
+              src="icons/community.svg"
               class="card-img-top"
               alt="Category 4"
             />
-            <div class="card-body">
-              <h5 class="card-title">Community</h5>
-            </div>
+
+            <h5 class="card-title">Community</h5>
           </div>
         </div>
-        <div class="col-6">
+        <div class="col-4">
           <div class="card text-center">
             <img
-              src="images/free giveaway.png"
+              src="icons/housing.svg"
               class="card-img-top"
-              alt="Category 5"
+              alt="Category 2"
             />
-            <div class="card-body">
-              <h5 class="card-title">Free Giveaway</h5>
-            </div>
+
+            <h5 class="card-title">Housing</h5>
           </div>
         </div>
-        <div class="col-6">
+
+        <div class="col-4">
           <div class="card text-center">
-            <img src="images/food.png" class="card-img-top" alt="Category 5" />
-            <div class="card-body">
-              <h5 class="card-title">Food & Drinks</h5>
-            </div>
+            <img
+              src="icons/food.png"
+              class="card-img-top food-img"
+              alt="Category 5"
+            />
+
+            <h5 class="card-title">Food & Drinks</h5>
           </div>
         </div>
       </div>
@@ -209,42 +200,46 @@
       </div>
     </main>
 
-    <div class="footer-wrapper">
-      <footer class="navbar fixed-bottom">
-        <div class="union-bg"></div>
-        <!-- Add a div for the union background -->
-        <div class="container d-flex justify-content-between">
-          <button
-            class="btn btn-light nav-btn d-flex flex-column align-items-center active"
-          >
+    <footer class="navbar fixed-bottom">
+      <div class="container d-flex justify-content-between">
+        <button
+          class="btn nav-btn d-flex flex-column align-items-center active"
+        >
+          <img src="./icons/light.svg" alt="" class="light-bg" />
+          <div>
             <i style="font-size: 1rem" class="bi bi-house-fill"></i>
-            <span>Home</span>
-          </button>
-          <button
-            class="btn btn-light nav-btn d-flex flex-column align-items-center"
-          >
-            <i style="font-size: 1rem" class="bi bi-chat"></i>
-            <span>Messages</span>
-          </button>
-          <div class="heart-btn-wrapper">
-            <button class="btn heart-btn">
-              <i class="bi bi-heart"></i>
-            </button>
           </div>
-          <button
-            class="btn btn-light nav-btn d-flex flex-column align-items-center"
-          >
+          <span>Home</span>
+        </button>
+        <button class="btn nav-btn d-flex flex-column align-items-center">
+          <img src="./icons/light.svg" alt="" class="light-bg" />
+          <div>
+            <i style="font-size: 1rem" class="bi bi-chat"></i>
+          </div>
+          <span>Messages</span>
+        </button>
+        <button class="btn nav-btn d-flex flex-column align-items-center">
+          <img src="./icons/light.svg" alt="" class="light-bg" />
+          <div>
+            <i class="bi bi-heart"></i>
+          </div>
+          <span>Favorites</span>
+        </button>
+        <button class="btn nav-btn d-flex flex-column align-items-center">
+          <img src="./icons/light.svg" alt="" class="light-bg" />
+          <div>
             <i style="font-size: 1rem" class="bi bi-people"></i>
-            <span>Followers</span>
-          </button>
-          <button
-            class="btn btn-light nav-btn d-flex flex-column align-items-center"
-          >
+          </div>
+          <span>Followers</span>
+        </button>
+        <button class="btn nav-btn d-flex flex-column align-items-center">
+          <img src="./icons/light.svg" alt="" class="light-bg" />
+          <div>
             <i style="font-size: 1rem" class="bi bi-person"></i>
-            <span>Profile</span>
-          </button>
-        </div>
-      </footer>
-    </div>
+          </div>
+          <span>Profile</span>
+        </button>
+      </div>
+    </footer>
   </body>
 </html>

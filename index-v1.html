@@ -27,7 +27,7 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="js/app.js" defer></script>
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/styles-v1.css" />
   </head>
 
   <body>
@@ -76,47 +76,16 @@
         </div>
       </div>
       <div id="notification-icon" class="notification-icon">
-        <!-- <i style="color: black" class="bi bi-bell"></i> -->
-        <img src="./icons/Notification.svg" alt="" />
-        <!-- <span
-          style="color: black"
-          id="notification-count"
-          class="notification-count"
-          >0</span
-        > -->
+        <img src="./icons/Notificationv1.svg" alt="" />
       </div>
     </header>
 
-    <div class="swiper-wrapper">
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="discount-label">Limited Time</div>
-            <img src="images/image 9.png" alt="Slide 1" class="img-fluid" />
-            <div class="slide-text">
-              Promote your business here! Get more visibility by advertising
-              with us.
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="discount-label">30% Discount</div>
-            <img src="images/image 8.png" alt="Slide 2" class="img-fluid" />
-            <div class="slide-text">
-              Promote your business here! Get more visibility by advertising
-              with us.
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="discount-label">50% Discount</div>
-            <img src="images/image 9.png" alt="Slide 3" class="img-fluid" />
-            <div class="slide-text">
-              Promote your business here! Get more visibility by advertising
-              with us.
-            </div>
-          </div>
-        </div>
+    <div class="banner">
+      <div class="discount-label">Limited Time</div>
+
+      <div class="banner-text">
+        Promote your business here! Get more visibility by advertising with us.
       </div>
-      <div class="swiper-pagination"></div>
     </div>
 
     <main class="container mt-4">
@@ -125,7 +94,7 @@
         <div class="col-6">
           <div class="card text-center">
             <img
-              src="images/marketplace.png"
+              src="images/marketplacev1.png"
               class="card-img-top"
               alt="Category 1"
             />
@@ -137,7 +106,7 @@
         <div class="col-6">
           <div class="card text-center">
             <img
-              src="images/housing.png"
+              src="images/housingv1.png"
               class="card-img-top"
               alt="Category 2"
             />
@@ -149,7 +118,7 @@
         <div class="col-6">
           <div class="card text-center">
             <img
-              src="images/events.png"
+              src="images/eventsv1.png"
               class="card-img-top"
               alt="Category 3"
             />
@@ -161,7 +130,7 @@
         <div class="col-6">
           <div class="card text-center">
             <img
-              src="images/community.png"
+              src="images/communityv1.png"
               class="card-img-top"
               alt="Category 4"
             />
@@ -173,20 +142,12 @@
         <div class="col-6">
           <div class="card text-center">
             <img
-              src="images/free giveaway.png"
+              src="images/giveawayv1.png"
               class="card-img-top"
               alt="Category 5"
             />
             <div class="card-body">
               <h5 class="card-title">Free Giveaway</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="card text-center">
-            <img src="images/food.png" class="card-img-top" alt="Category 5" />
-            <div class="card-body">
-              <h5 class="card-title">Food & Drinks</h5>
             </div>
           </div>
         </div>
@@ -202,49 +163,50 @@
           onchange="navigateToDesign(this.value)"
         >
           <option value="" selected disabled>Select a design version</option>
-          <option value="index-v1.html">Design Version 1</option>
+          <!-- <option value="index-v1.html">Design Version 1</option> -->
           <option value="index-v2.html">Design Version 2</option>
           <option value="index-v3.html">Design Version 3</option>
+          <option value="index.html">Design Version 4</option>
         </select>
       </div>
     </main>
 
-    <div class="footer-wrapper">
-      <footer class="navbar fixed-bottom">
-        <div class="union-bg"></div>
-        <!-- Add a div for the union background -->
-        <div class="container d-flex justify-content-between">
-          <button
-            class="btn btn-light nav-btn d-flex flex-column align-items-center active"
-          >
+    <footer class="navbar fixed-bottom">
+      <div class="container d-flex justify-content-between">
+        <button
+          class="btn nav-btn d-flex flex-column align-items-center active"
+        >
+          <div>
             <i style="font-size: 1rem" class="bi bi-house-fill"></i>
-            <span>Home</span>
-          </button>
-          <button
-            class="btn btn-light nav-btn d-flex flex-column align-items-center"
-          >
-            <i style="font-size: 1rem" class="bi bi-chat"></i>
-            <span>Messages</span>
-          </button>
-          <div class="heart-btn-wrapper">
-            <button class="btn heart-btn">
-              <i class="bi bi-heart"></i>
-            </button>
           </div>
-          <button
-            class="btn btn-light nav-btn d-flex flex-column align-items-center"
-          >
+
+          <span>Home</span>
+        </button>
+        <button class="btn nav-btn d-flex flex-column align-items-center">
+          <div>
+            <i style="font-size: 1rem" class="bi bi-chat"></i>
+          </div>
+          <span>Messages</span>
+        </button>
+        <button class="btn nav-btn d-flex flex-column align-items-center">
+          <div>
+            <i class="bi bi-heart"></i>
+          </div>
+          <span>Favorites</span>
+        </button>
+        <button class="btn nav-btn d-flex flex-column align-items-center">
+          <div>
             <i style="font-size: 1rem" class="bi bi-people"></i>
-            <span>Followers</span>
-          </button>
-          <button
-            class="btn btn-light nav-btn d-flex flex-column align-items-center"
-          >
+          </div>
+          <span>Followers</span>
+        </button>
+        <button class="btn nav-btn d-flex flex-column align-items-center">
+          <div>
             <i style="font-size: 1rem" class="bi bi-person"></i>
-            <span>Profile</span>
-          </button>
-        </div>
-      </footer>
-    </div>
+          </div>
+          <span>Profile</span>
+        </button>
+      </div>
+    </footer>
   </body>
 </html>

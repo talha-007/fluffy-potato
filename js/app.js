@@ -21,6 +21,27 @@ document.addEventListener("DOMContentLoaded", function () {
       clickable: true,
     },
   });
+
+  const splashScreen = document.getElementById("splash-screen");
+
+  // Hide the splash screen after 2 seconds
+  setTimeout(() => {
+    splashScreen.style.display = "none";
+  }, 2000);
+
+  const splashScreen1 = document.getElementById("splash-screen");
+  const splashScreen2 = document.getElementById("splash-screen-2");
+
+  // Show the first splash screen for 2 seconds
+  setTimeout(() => {
+    splashScreen1.style.display = "none"; // Hide the first splash screen
+    splashScreen2.style.display = "flex"; // Show the second splash screen
+
+    // Show the second splash screen for 2 seconds
+    setTimeout(() => {
+      splashScreen2.style.display = "none"; // Hide the second splash screen
+    }, 2000);
+  }, 2000);
 });
 
 $(document).ready(function () {
@@ -177,3 +198,9 @@ $(document).ready(function () {
     );
   }
 });
+
+function navigateToDesign(page) {
+  if (page) {
+    window.location.href = page; // Redirect to the selected design version
+  }
+}
